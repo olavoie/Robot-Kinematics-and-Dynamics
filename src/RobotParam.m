@@ -3,13 +3,13 @@ classdef RobotParam
         mActuatorCount = 7;
         mJointOffset = [180, 180, 180, 180, 180, 180, 0.0]; 
         
-        mT01 = RobotParam.HomogeniousMatriix(pi, 0, 0 , 0, 0, 0.09275);
-        mT12 = RobotParam.HomogeniousMatriix(-pi/2, 0,  0, 0, -0.04, -0.12875);
-        mT23 = RobotParam.HomogeniousMatriix(pi/2, 0, 0 , 0, 0.1725, -0.04);
-        mT34 = RobotParam.HomogeniousMatriix(-pi/2, 0, 0 , 0, -0.04, -0.1725);
-        mT45 = RobotParam.HomogeniousMatriix(pi/2, 0, 0 , 0, 0.24125, -0.04);
-        mT56 = RobotParam.HomogeniousMatriix(-pi/2, 0, 0 , 0, 0, -0.10375);
-        mT67 = RobotParam.HomogeniousMatriix(pi/2, 0, 0 , 0, 0.10375, 0);
+        mT01 = RobotParam.HomogeniousMatrix(pi, 0, 0 , 0, 0, 0.09275);
+        mT12 = RobotParam.HomogeniousMatrix(-pi/2, 0,  0, 0, -0.04, -0.12875);
+        mT23 = RobotParam.HomogeniousMatrix(pi/2, 0, 0 , 0, 0.1725, -0.04);
+        mT34 = RobotParam.HomogeniousMatrix(-pi/2, 0, 0 , 0, -0.04, -0.1725);
+        mT45 = RobotParam.HomogeniousMatrix(pi/2, 0, 0 , 0, 0.24125, -0.04);
+        mT56 = RobotParam.HomogeniousMatrix(-pi/2, 0, 0 , 0, 0, -0.10375);
+        mT67 = RobotParam.HomogeniousMatrix(pi/2, 0, 0 , 0, 0.10375, 0);
         
         mJointReferentiel;
     end
@@ -26,7 +26,7 @@ classdef RobotParam
     end
     
     methods(Static)
-        function T = HomogeniousMatriix(r, p, y1, x, y, z)
+        function T = HomogeniousMatrix(r, p, y1, x, y, z)
             eul = [y1 p r];
             T = rotm2tform(eul2rotm(eul)) + [0 0 0 x; 0 0 0 y; 0 0 0 z; 0 0 0 0];   
         end

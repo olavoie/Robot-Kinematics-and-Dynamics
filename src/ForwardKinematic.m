@@ -3,6 +3,7 @@ classdef ForwardKinematic
         mRobotParam = RobotParam 
         mFrame;
         mJacobian = zeros(6,7);
+        mLastFrame;
     end
     methods
         function obj = updateJointFrame(obj, jointAngles)
@@ -11,8 +12,8 @@ classdef ForwardKinematic
             for n = 2:obj.mRobotParam.mActuatorCount
                 obj.mFrame(:, :, n) = obj.mFrame(:, :, n - 1) * obj.updateJoint(jointAngles, n);
             end
-            
-            obj.mJacobian = obj.updateJacobian(obj.mFrame);
+            obj.mLastFrame = obj.mFrame(:, :, obj.mRobotParam.mActuatorCount);
+            obj.mJacobian  = obj.updateJacobian(obj.mFrame);
         end
         
         function T = updateJoint(obj, angle, joint)
