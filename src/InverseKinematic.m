@@ -17,7 +17,6 @@ classdef InverseKinematic
                 minNorm = norm(obj.ComputeCartesianIncrementVectorFromPose(forwardKinematic.mLastFrame, desiredIncrementPose));
                 i = i + 1;
             end
-            joint = forwardKinematic.mLastFrame;
         end
         
         function cartesianIncrementVector = ComputeCartesianIncrementVectorFromPose(obj, pose1, pose2)

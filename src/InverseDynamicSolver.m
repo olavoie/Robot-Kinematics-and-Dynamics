@@ -1,4 +1,14 @@
 function tau = InverseDynamicSolver(R, P, Pc, I, m, jointVelocity, jointAcceleration, actuatorCount)
+    vv = zeros(3, 7);
+    w  = zeros(3, 7);
+    ww = zeros(3, 7);
+    vvc = zeros(3,7);
+    F = zeros(3,7);
+    N = zeros(3,7);
+    f = zeros(3,8);
+    nn = zeros(3,8);
+    tau = zeros(1,7);
+    
     vv(:, 1) = [0; 0; 9.81];
     w(:, 1)  = [0; 0;    0];
     ww(:, 1) = [0; 0; jointAcceleration(1)];

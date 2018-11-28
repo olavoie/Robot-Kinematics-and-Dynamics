@@ -11,11 +11,11 @@ classdef RobotParam
         mT56 = RobotParam.HomogeniousMatrix(-pi/2, 0, 0 , 0, 0, -0.10375);
         mT67 = RobotParam.HomogeniousMatrix(pi/2, 0, 0 , 0, 0.10375, 0);
         
-        mJointReferentiel;
+        mJointReferentiel = zeros(4,4,7);
     end
     methods
         function obj = RobotParam
-            obj.mJointReferentiel        = obj.mT01;
+            obj.mJointReferentiel(:,:,1) = obj.mT01;
             obj.mJointReferentiel(:,:,2) = obj.mT12;
             obj.mJointReferentiel(:,:,3) = obj.mT23;
             obj.mJointReferentiel(:,:,4) = obj.mT34;
