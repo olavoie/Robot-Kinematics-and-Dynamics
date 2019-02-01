@@ -3,13 +3,13 @@ classdef RobotParam
         mActuatorCount = 7;
         mJointOffset = [180, 180, 180, 180, 180, 180, 0.0]; 
         
-        mT01 = RobotParam.HomogeniousMatrix(pi, 0, 0 , 0, 0, 0.09275);
-        mT12 = RobotParam.HomogeniousMatrix(-pi/2, 0,  0, 0, -0.04, -0.12875);
-        mT23 = RobotParam.HomogeniousMatrix(pi/2, 0, 0 , 0, 0.1725, -0.04);
-        mT34 = RobotParam.HomogeniousMatrix(-pi/2, 0, 0 , 0, -0.04, -0.1725);
-        mT45 = RobotParam.HomogeniousMatrix(pi/2, 0, 0 , 0, 0.24125, -0.04);
-        mT56 = RobotParam.HomogeniousMatrix(-pi/2, 0, 0 , 0, 0, -0.10375);
-        mT67 = RobotParam.HomogeniousMatrix(pi/2, 0, 0 , 0, 0.10375, 0);
+        mT01 = RobotParam.HomogeniousMatrix(0, 0, 0 , 0, 0, 0);
+        mT12 = RobotParam.HomogeniousMatrix(0, 0,  0, 0, 0, 0);
+        mT23 = RobotParam.HomogeniousMatrix(0, 0, 0 , 0, 0, 0);
+        mT34 = RobotParam.HomogeniousMatrix(0, 0, 0 , 0, 0, 0);
+        mT45 = RobotParam.HomogeniousMatrix(0, 0, 0 , 0, 0, 0);
+        mT56 = RobotParam.HomogeniousMatrix(0, 0, 0 , 0, 0, 0);
+        mT67 = RobotParam.HomogeniousMatrix(0, 0, 0 , 0, 0, 0);
         
         mJointReferentiel = zeros(4,4,7);
     end
